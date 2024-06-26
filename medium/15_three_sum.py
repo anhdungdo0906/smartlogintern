@@ -5,12 +5,13 @@
 
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        nums.sort()  # Sort the array
+        # Sắp xếp mảng từ bé -> lớn
+        nums.sort()
         n = len(nums)
         result = []
 
         for i in range(n - 2):
-            # Skip duplicates for the first element of the triplet
+            # Loại bỏ phần tử trùng lặp đầu tiên
             if i > 0 and nums[i] == nums[i - 1]:
                 continue
 
@@ -26,12 +27,11 @@ class Solution:
                     right -= 1
                 # total == 0
                 else:
-                    # Found a triplet
                     result.append([nums[i], nums[left], nums[right]])
-                    # Skip duplicates for the second element of the triplet
+                    # Loại bỏ phần tử trùng lặp thứ 2
                     while left < right and nums[left] == nums[left + 1]:
                         left += 1
-                    # Skip duplicates for the third element of the triplet
+                    # Loại bỏ phần tử trùng lặp thứ 3
                     while left < right and nums[right] == nums[right - 1]:
                         right -= 1
                     left += 1

@@ -42,12 +42,12 @@ class Solution:
                         seen.add(board[row][col])
             return True
 
-        # Check each row
+        # Check theo hàng
         for row in range(9):
             if not is_valid_row(board, row):
                 return False
 
-        # Check each column
+        # Check cột
         for col in range(9):
             if not is_valid_col(board, col):
                 return False
